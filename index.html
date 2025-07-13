@@ -1,12 +1,68 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Becky's Website</title>
-</head>
-<body>
+import React, { useState } from 'react';
 
-  <h1>Welcome!</h1>
-  <button onclick="alert('Welcome to Becky\'s website')">Click Me!</button>
+function HomePage() {
+  const [name, setName] = useState('');
 
-</body>
-</html>
+  const handleIdentityCheck = () => {
+    const enteredName = prompt("What's your name?");
+    if (enteredName) {
+      setName(enteredName);
+    }
+  };
+
+  return (
+    <div
+      style={{
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}
+    >
+      <h1 style={{ fontFamily: '"Comic Sans MS", fantasy', color: '#4b9be1' }}>
+        {name ? `${name}'s website` : "Everleaf's website"}
+      </h1>
+      <h2
+        style={{
+          fontFamily: 'Arial, Helvetica, cursive',
+          color: 'rgb(243, 103, 123)',
+          marginBottom: '10rem'
+        }}
+      >
+        click the buttons below
+      </h2>
+      <button
+        style={{
+          fontFamily: 'monospace',
+          padding: '1rem',
+          fontSize: '2rem',
+          background: 'blue',
+          color: 'white',
+          border: 'none',
+          cursor: 'pointer'
+        }}
+        onClick={handleIdentityCheck}
+      >
+        Identity Check
+      </button>
+      <button
+        style={{
+          fontFamily: 'monospace',
+          padding: '1rem',
+          fontSize: '2rem',
+          background: 'orange',
+          color: 'white',
+          marginTop: '2rem',
+          border: 'none',
+          cursor: 'pointer'
+        }}
+        onClick={() => alert('quack')}
+      >
+        duck
+      </button>
+    </div>
+  );
+}
+
+export default HomePage;
