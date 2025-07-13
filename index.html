@@ -4,21 +4,9 @@
   <title>Becky's Website</title>
 </head>
 <body>
-  <button onclick="showNotification()">Click Me!</button>
 
-  <script>
-    function showNotification() {
-      // Ask for permission if not already granted
-      if (Notification.permission === "granted") {
-        new Notification("Welcome to Becky's website");
-      } else if (Notification.permission !== "denied") {
-        Notification.requestPermission().then(function (permission) {
-          if (permission === "granted") {
-            new Notification("Welcome to Becky's website");
-          }
-        });
-      }
-    }
-  </script>
+  <h1>Welcome!</h1>
+  <button onclick="alert('Welcome to Becky\'s website')">Click Me!</button>
+
 </body>
 </html>
